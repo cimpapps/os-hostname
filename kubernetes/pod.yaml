@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: hostname-pod1
+  labels:
+    app: hostname
+    env: test
+
+spec:
+  containers:
+    - name: my-cool-pod
+      image: docker.io/cimpapps/hostname:v7
+      ports:
+        - containerPort: 8383
+

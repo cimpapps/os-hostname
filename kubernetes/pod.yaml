@@ -10,7 +10,7 @@ metadata:
 spec:
   containers:
     - name: my-cool-pod
-      image: docker.io/cimpapps/hostname:v7
+      image: docker.io/cimpapps/hostname:v9
       ports:
         - containerPort: 8383
 

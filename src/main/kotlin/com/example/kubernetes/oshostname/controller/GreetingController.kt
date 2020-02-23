@@ -17,7 +17,7 @@ class GreetingController {
     fun greeting() = InetAddress.getLocalHost().hostName
 
     @GetMapping("/hello/{name}/{port}")
-    fun greetingAnother(@PathVariable name: String, @PathVariable port: String) = restTemplate.getForObject("http://$name:$port/hello", String.javaClass)
+    fun greetingAnother(@PathVariable name: String, @PathVariable port: String) = restTemplate.getForObject("http://$name:$port/hello", String::class.java)
 
 
 

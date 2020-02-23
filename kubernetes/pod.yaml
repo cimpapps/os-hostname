@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod
 
 metadata:
-  name: hostname-pod1
+  name: hostname-pod4
   labels:
     app: hostname
     env: test

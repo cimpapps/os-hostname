@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: os-hostname-deployment
+  labels:
+    env: os-deployment
+
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: os-host
+  template:
+    metadata:
+      labels:
+        app: os-host
+    spec:
+      containers:
+        - name: os-host
+          image: docker.io/cimbonda/os-host:v1
+          ports:
+            - containerPort: 8383
+              protocol: TCP
+
+          readinessProbe:
+            httpGet:
+              port: 8383
+              path: /hello
+            initialDelaySeconds: 20
+
+          livenessProbe:
+            httpGet:
+              port: 8383
+              path: /hello
+            periodSeconds: 5
+

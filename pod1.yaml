@@ -1,0 +1,19 @@
+
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: os-host1
+  labels:
+    app: os-host
+
+spec:
+  hostname: catalin-machine
+  containers:
+    - name: os-host
+      image: docker.io/cimbonda/os-host:v1
+      ports:
+        - containerPort: 8383
+          protocol: TCP
+
+

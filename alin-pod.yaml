@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: alin
+  labels:
+    env: test1
+
+spec:
+  containers:
+    - name: app-container
+      image: docker.io/nilan123/app:v1
+      ports:
+        - containerPort: 8080
+          protocol: TCP
+
+      env:
+        - name: name
+          value: catalin
